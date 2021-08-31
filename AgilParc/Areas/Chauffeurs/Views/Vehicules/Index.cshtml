@@ -1,0 +1,108 @@
+﻿@model IEnumerable<AgilParc.Models.Vehicule>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Type)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NumSerie)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DateFabrication)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Etat)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DateMiseEnCirculation)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Kilometrage)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Moteur)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NbrPortes)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Maintenance)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Parc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Chauffeur)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Assurence)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Visite)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Type)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NumSerie)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DateFabrication)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Etat)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DateMiseEnCirculation)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Kilometrage)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Moteur)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NbrPortes)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Maintenance.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Parc.Nom)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Chauffeur.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Assurence.Numero)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Visite.Id)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Matricule">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Matricule">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Matricule">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

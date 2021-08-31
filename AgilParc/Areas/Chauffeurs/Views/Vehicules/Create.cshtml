@@ -1,0 +1,94 @@
+﻿@model AgilParc.Models.Vehicule
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Create</h1>
+
+<h4>Vehicule</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Matricule" class="control-label"></label>
+                <input asp-for="Matricule" class="form-control" />
+                <span asp-validation-for="Matricule" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Type" class="control-label"></label>
+                <input asp-for="Type" class="form-control" />
+                <span asp-validation-for="Type" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="NumSerie" class="control-label"></label>
+                <input asp-for="NumSerie" class="form-control" />
+                <span asp-validation-for="NumSerie" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DateFabrication" class="control-label"></label>
+                <input asp-for="DateFabrication" class="form-control" />
+                <span asp-validation-for="DateFabrication" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Etat" class="control-label"></label>
+                <input asp-for="Etat" class="form-control" />
+                <span asp-validation-for="Etat" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DateMiseEnCirculation" class="control-label"></label>
+                <input asp-for="DateMiseEnCirculation" class="form-control" />
+                <span asp-validation-for="DateMiseEnCirculation" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Kilometrage" class="control-label"></label>
+                <input asp-for="Kilometrage" class="form-control" />
+                <span asp-validation-for="Kilometrage" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Moteur" class="control-label"></label>
+                <input asp-for="Moteur" class="form-control" />
+                <span asp-validation-for="Moteur" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="NbrPortes" class="control-label"></label>
+                <input asp-for="NbrPortes" class="form-control" />
+                <span asp-validation-for="NbrPortes" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MaintenanceId" class="control-label"></label>
+                <select asp-for="MaintenanceId" class ="form-control" asp-items="ViewBag.MaintenanceId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="ParcNom" class="control-label"></label>
+                <select asp-for="ParcNom" class ="form-control" asp-items="ViewBag.ParcNom"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="ChauffeurId" class="control-label"></label>
+                <select asp-for="ChauffeurId" class ="form-control" asp-items="ViewBag.ChauffeurId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="AssurenceNumero" class="control-label"></label>
+                <select asp-for="AssurenceNumero" class ="form-control" asp-items="ViewBag.AssurenceNumero"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="VisiteId" class="control-label"></label>
+                <select asp-for="VisiteId" class ="form-control" asp-items="ViewBag.VisiteId"></select>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
